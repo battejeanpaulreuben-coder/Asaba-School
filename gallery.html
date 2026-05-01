@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Asaba School Masindi Photo Gallery – life at our school through pictures." />
+  <title>Gallery | Asaba School Masindi</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Gallery-specific transitions */
+    .gallery-item {
+      transition: opacity 0.3s ease, transform 0.3s ease, display 0s;
+      opacity: 1;
+      transform: scale(1);
+    }
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox-inner {
+      background: var(--white);
+      border-radius: var(--radius);
+      max-width: 700px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .lightbox-img {
+      width: 100%;
+      height: 380px;
+      background: linear-gradient(135deg, var(--green-mid), var(--green-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+    }
+    .lightbox-body { padding: 24px; }
+    .lightbox-body h3 { margin-bottom: 8px; }
+    .lightbox-body p { color: var(--text-muted); font-size: 0.92rem; }
+    .lightbox-close {
+      position: absolute;
+      top: 12px; right: 16px;
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: var(--white);
+      font-size: 1.4rem;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 2;
+    }
+    .lightbox-close:hover { background: var(--gold); color: var(--green-dark); }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span>📞 <a href="tel:+256780891941">+256 780 891 941</a></span>
+        <span>✉ <a href="mailto:info@asabaschool.ac.ug">info@asabaschool.ac.ug</a></span>
+      </div>
+      <div class="top-bar-right">
+        <span>📍 Ashton Drive, P.O. Box 438, Masindi, Uganda</span>
+        <span>🕗 Mon-Fri: 7:30am - 5:00pm</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-wrapper">
+      <a href="index.html" class="logo">
+        <div class="logo-badge"><img src="images/Badge.png" alt="Badge" class="logo"></div>
+        <div class="logo-text">
+          <span class="school-name">Asaba School</span>
+          <span class="school-tagline">Masindi, Uganda · Est. 1990</span>
+        </div>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <h1>Photo Gallery</h1>
+      <p>A window into life at Asaba School Masindi</p>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> &rsaquo; <span>Gallery</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <section>
+    <div class="container">
+      <!-- Filter Buttons -->
+      <div class="gallery-filter">
+        <button class="filter-btn active" data-filter="all">All Photos</button>
+        <button class="filter-btn" data-filter="academic">Academics</button>
+        <button class="filter-btn" data-filter="sports">Sports</button>
+        <button class="filter-btn" data-filter="events">Events</button>
+        <button class="filter-btn" data-filter="arts">Arts &amp; Culture</button>
+        <button class="filter-btn" data-filter="campus">Campus</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid">
+
+        <div class="gallery-item" data-category="academic"
+             data-title="Classroom Learning"
+             data-desc="Primary 6 pupils engaged in a lesson."
+             style="background: linear-gradient(135deg,#2d6a4f,#1a4731);">
+          <img src="images/IN-CLASS.png" alt="Students in class learning">
+          <div class="overlay">
+            <h3>Classroom Learning</h3>
+            <p>Primary 6 pupils engaged in a lesson</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="sports"
+             data-title="Netball Team"
+             data-desc="Our girls' netball team."
+             style="background: linear-gradient(135deg,#276749,#2d6a4f);">
+          <img src="images/SportsTeam.png" alt="Students netball team">
+          <div class="overlay">
+            <h3>Girls' Netball Team</h3>
+            <p>Our girls' netball team. </p>
+          </div>
+        </div>
+
+        <div class="gallery-item tall" data-category="events"
+             data-title="Paint AND Sip"
+             data-desc="Event where pupils explore their painting talents"
+             style="background: linear-gradient(135deg,#d4a017,#b7791f);">
+          <img src="images/Paint-and-sip.png" alt="Paint and sip sign">
+          <div class="overlay">
+            <h3>Paint AND Sip</h3>
+            <p>Event where pupils explore their painting talents</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="arts"
+             data-title="Cultural Dance"
+             data-desc="Our traditional dance troupe performs at the Masindi Arts Festival."
+             style="background: linear-gradient(135deg,#8b5e3c,#6b4226);">
+          <img src="images/CulturalDance.png" alt="Students dancing Maganda">
+          <div class="overlay">
+            <h3>Cultural Dance</h3>
+            <p>Our dance troupe performs at the Masindi Arts Festival</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="campus"
+             data-title="School Compound"
+             data-desc="Aerial view of Asaba School's green and spacious compound"
+             style="background: linear-gradient(135deg,#38a169,#2d6a4f);">
+           <img src="images/Compound.jpeg" alt="The green and spaciuos school compund">
+          <div class="overlay">
+            <h3>School Compound</h3>
+            <p>Our green and spacious compound</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="academic"
+             data-title="Academic Day"
+             data-desc="Parents come and folow up on students' academics"
+             style="background: linear-gradient(135deg,#2b6cb0,#1a365d);">
+          <img src="images/academic-day-flyer.png" alt="Flyer for academic day">
+          <div class="overlay">
+            <h3>Academic Day</h3>
+            <p>Parents come and folow up on students' academics</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="sports"
+             data-title="Athletics Day"
+             data-desc="Pupils compete Athletics Competition"
+             style="background: linear-gradient(135deg,#c05621,#9c4221);">
+          <img src="images/running.png" alt="Students participating in running competition">
+          <div class="overlay">
+            <h3>Athletics Day</h3>
+            <p>Pupils compete in the Annual Cross-Country Athletics Meet</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="events"
+             data-title="Independence Day Celebrations"
+             data-desc="Indepence Day Flyer."
+             style="background: linear-gradient(135deg,#276749,#d4a017);">
+          <img src="images/independence-day.png" alt="Indepence day Flyer">
+          <div class="overlay">
+            <h3>Independence Day</h3>
+            <p>Indepence Day Flyer</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="arts"
+             data-title="Drama Performance"
+             data-desc="The school drama club presents their end-of-year theatrical performance."
+             style="background: linear-gradient(135deg,#6b46c1,#44337a);">
+          <img src="images/theatre-perform.png" alt="Nursery Students Dancing">
+          <div class="overlay">
+            <h3>Drama Performance</h3>
+            <p>School drama club end-of-year theatrical performance</p>
+          </div>
+        </div>
+
+        <div class="gallery-item tall" data-category="academic"
+             data-title="Students in Class"
+             data-desc="Students in Mathematics Class doing work."
+             style="background: linear-gradient(135deg,#744210,#92400e);">
+          <img src="images/StudentsWork.jpeg" alt="Students in Class">
+          <div class="overlay">
+            <h3>Students in Class</h3>
+            <p>Students in Mathematics Class doing work.</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="campus"
+             data-title="Our School Gate"
+             data-desc="Asaba Schools Masindi School Gate"
+             style="background: linear-gradient(135deg,#1a4731,#2d6a4f);">
+          <img src="images/School-gate.jpeg" alt="School Gate">
+          <div class="overlay">
+            <h3>Our School Gate</h3>
+            <p>Asaba Schools Masindi School Gate</p>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="events"
+             data-title="Graduation Ceremony"
+             data-desc="Nursery graduation - our little ones moving on to Primary One!"
+             style="background: linear-gradient(135deg,#d4a017,#276749);">
+           <img src="images/Graduate.png" alt="Nursery Students Graduation">
+          <div class="overlay">
+            <h3>Nursery Graduation</h3>
+            <p>Our little ones moving on to Primary One!</p>
+          </div>
+        </div>
+
+      </div>
+      <!-- End Gallery Grid -->
+    </div>
+  </section>
+
+  <!-- NOTE -->
+  <section style="background: var(--white); padding: 40px 0; text-align: center;">
+    <div class="container">
+      <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 600px; margin: 0 auto;">
+        📸 More photos and videos are shared regularly on our
+        <a href="https://www.tiktok.com/@asabaschoolmasindi" target="_blank" rel="noopener" style="color: var(--green-mid); font-weight: 600;">TikTok page</a>
+        and
+        <a href="https://www.facebook.com/asabaschoolmasindi" target="_blank" rel="noopener" style="color: var(--green-mid); font-weight: 600;">Facebook page</a>.
+        Follow us to stay connected with life at Asaba School!
+      </p>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+      <div class="lightbox-img" id="lightboxImg">🏫</div>
+      <div class="lightbox-body">
+        <h3 id="lightboxTitle">Title</h3>
+        <p id="lightboxDesc">Description</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p class="school-name">Asaba School Masindi</p>
+          <p>Providing quality nursery and primary education in Masindi, Uganda since 1990. Building confident young learners for a brighter future.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">📘</a>
+            <a href="https://www.tiktok.com/@asabaschoolmasindi" class="social-link" aria-label="TikTok" target="_blank" rel="noopener">🎵</a>
+            <a href="#" class="social-link" aria-label="WhatsApp">💬</a>
+            <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact / Admissions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="academics.html#nursery">Nursery Section</a></li>
+            <li><a href="academics.html#primary">Primary Section</a></li>
+            <li><a href="academics.html#ple">PLE Preparation</a></li>
+            <li><a href="academics.html#clubs">Clubs &amp; Activities</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul class="footer-contact">
+            <li><span>📍</span><span>Ashton Drive, P.O. Box 438, Masindi</span></li>
+            <li><span>📞</span><span><a href="tel:+256780891941">+256 780 891 941</a></span></li>
+            <li><span>✉</span><span><a href="mailto:info@asabaschool.ac.ug">info@asabaschool.ac.ug</a></span></li>
+            <li><span>🕗</span><span>Mon–Fri: 7:30am – 5:00pm</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="currentYear"></span> Asaba School Masindi. All rights reserved.</span>
+        <span>Designed for BSE1208 — Introduction to Web Development</span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTop" aria-label="Scroll to top">↑</button>
+  <script src="script.js"></script>
+  <script>
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg   = document.getElementById('lightboxImg');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxDesc  = document.getElementById('lightboxDesc');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', () => {
+        lightboxImg.textContent   = item.querySelector('.gallery-emoji').textContent;
+        lightboxTitle.textContent = item.dataset.title;
+        lightboxDesc.textContent  = item.dataset.desc;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  </script>
+</body>
+</html>

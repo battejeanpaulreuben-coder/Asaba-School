@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Asaba School Masindi or apply for admission. Reach us by phone, email, or fill out our registration form." />
+  <title>Contact &amp; Registration | Asaba School Masindi</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <span>📞 <a href="tel:+256780891941">+256 780 891 941</a></span>
+        <span>✉ <a href="mailto:info@asabaschool.ac.ug">info@asabaschool.ac.ug</a></span>
+      </div>
+      <div class="top-bar-right">
+        <span>📍 Ashton Drive, P.O. Box 438, Masindi, Uganda</span>
+        <span>🕗 Mon–Fri: 7:30am – 5:00pm</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-wrapper">
+      <a href="index.html" class="logo">
+        <div class="logo-badge"><img src="images/Badge.png" alt="Badge" class="logo"></div>
+        <div class="logo-text">
+          <span class="school-name">Asaba School</span>
+          <span class="school-tagline">Masindi, Uganda · Est. 1990</span>
+        </div>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <h1>Contact &amp; Registration</h1>
+      <p>Get in touch with us or register your child for the 2026/2027 academic year</p>
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> &rsaquo; <span>Contact &amp; Registration</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT + FORM -->
+  <section>
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <h2 class="section-title">Get In Touch</h2>
+          <p>We'd love to hear from you! Whether you have questions about admission, school fees, our programs, or just want to learn more about Asaba School Masindi, we're here to help.</p>
+
+          <div class="contact-detail fade-in">
+            <div class="icon">📍</div>
+            <div class="text">
+              <strong>Physical Address</strong>
+              <span>Ashton Drive, P.O. Box 438, Masindi Municipality, Masindi District, Uganda</span>
+            </div>
+          </div>
+
+          <div class="contact-detail fade-in">
+            <div class="icon">📞</div>
+            <div class="text">
+              <strong>Phone / WhatsApp</strong>
+              <span><a href="tel:+256780891941">+256 780 891 941</a></span>
+            </div>
+          </div>
+
+          <div class="contact-detail fade-in">
+            <div class="icon">✉</div>
+            <div class="text">
+              <strong>Email Address</strong>
+              <span><a href="mailto:info@asabaschool.ac.ug">info@asabaschool.ac.ug</a></span>
+            </div>
+          </div>
+
+          <div class="contact-detail fade-in">
+            <div class="icon">🕗</div>
+            <div class="text">
+              <strong>Office Hours</strong>
+              <span>Monday – Friday: 7:30 AM – 5:00 PM<br>Saturday: 8:00 AM – 12:00 PM (Term Time)</span>
+            </div>
+          </div>
+
+          <div class="contact-detail fade-in">
+            <div class="icon">📅</div>
+            <div class="text">
+              <strong>Admissions Visits</strong>
+              <span>You are welcome to visit the school during office hours. No appointment needed.</span>
+            </div>
+          </div>
+
+          <!-- Map Placeholder -->
+          <div class="map-placeholder fade-in">
+            🗺️
+            <div>
+              <p><strong>Find Us On Ashton Drive</strong></p>
+              <p>Masindi Municipality, Western Uganda</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="contact-form fade-in">
+          <h2>Admission / Enquiry Form</h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">
+            Fill in the form below to enquire about admission or to register your child for the 2026/2027 academic year. Fields marked <span style="color:#c0392b;">*</span> are required.
+          </p>
+
+          <form id="contactForm" novalidate>
+
+            <!-- Parent Details -->
+            <h3 style="font-size: 1rem; color: var(--green-dark); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #e0e8e2;">👤 Parent / Guardian Details</h3>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name <span style="color:#c0392b;">*</span></label>
+                <input type="text" id="name" name="name" placeholder="e.g. Sarah Nakato" autocomplete="name" />
+                <span class="form-error" id="nameError"></span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address <span style="color:#c0392b;">*</span></label>
+                <input type="email" id="email" name="email" placeholder="e.g. sarah@email.com" autocomplete="email" />
+                <span class="form-error" id="emailError"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp</label>
+                <input type="tel" id="phone" name="phone" placeholder="e.g. +256 700 000 000" autocomplete="tel" />
+                <span class="form-error" id="phoneError"></span>
+              </div>
+              <div class="form-group">
+                <label for="subject">Enquiry Type <span style="color:#c0392b;">*</span></label>
+                <select id="subject" name="subject">
+                  <option value="">— Select one —</option>
+                  <option value="admission">Nursery Admission</option>
+                  <option value="primary-admission">Primary Admission</option>
+                  <option value="school-fees">School Fees Inquiry</option>
+                  <option value="academics">Academic Programs</option>
+                  <option value="visit">Schedule a School Visit</option>
+                  <option value="other">General Enquiry</option>
+                </select>
+                <span class="form-error" id="subjectError"></span>
+              </div>
+            </div>
+
+            <!-- Child Details -->
+            <h3 style="font-size: 1rem; color: var(--green-dark); margin: 24px 0 16px; padding-bottom: 8px; border-bottom: 2px solid #e0e8e2;">👶 Child's Details (if applicable)</h3>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="childName">Child's Full Name</label>
+                <input type="text" id="childName" name="childName" placeholder="e.g. John Mugisha" />
+              </div>
+              <div class="form-group">
+                <label for="childAge">Child's Age</label>
+                <select id="childAge" name="childAge">
+                  <option value="">— Select age —</option>
+                  <option value="3">3 years (Baby Class)</option>
+                  <option value="4">4 years (Middle Class)</option>
+                  <option value="5">5 years (Top Class)</option>
+                  <option value="6">6 years (Primary 1)</option>
+                  <option value="7">7 years (Primary 2)</option>
+                  <option value="8">8 years (Primary 3)</option>
+                  <option value="9">9 years (Primary 4)</option>
+                  <option value="10">10 years (Primary 5)</option>
+                  <option value="11">11 years (Primary 6)</option>
+                  <option value="12">12 years (Primary 7)</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="previousSchool">Previous School (if any)</label>
+                <input type="text" id="previousSchool" name="previousSchool" placeholder="Name of previous school" />
+              </div>
+              <div class="form-group">
+                <label for="intakeYear">Intended Start</label>
+                <select id="intakeYear" name="intakeYear">
+                  <option value="">— Select term —</option>
+                  <option value="term1-2026">Term I 2026 (Feb)</option>
+                  <option value="term2-2026">Term II 2026 (June)</option>
+                  <option value="term3-2026">Term III 2026 (Sept)</option>
+                  <option value="term1-2027">Term I 2027 (Feb)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group">
+              <label for="message">Your Message / Questions <span style="color:#c0392b;">*</span></label>
+              <textarea id="message" name="message" placeholder="Tell us more about your child or ask us any questions you have about Asaba School…"></textarea>
+              <span class="form-error" id="messageError"></span>
+            </div>
+
+            <!-- How did you hear -->
+            <div class="form-group">
+              <label for="referral">How did you hear about us?</label>
+              <select id="referral" name="referral">
+                <option value="">— Select —</option>
+                <option value="friend">Friend / Family Referral</option>
+                <option value="tiktok">TikTok</option>
+                <option value="facebook">Facebook</option>
+                <option value="google">Google Search</option>
+                <option value="passing">Passed by the School</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 1rem; margin-top: 8px;">
+              📩 Send Enquiry / Register Interest
+            </button>
+
+            <!-- Success Message -->
+            <div class="form-success" id="formSuccess">
+              ✅ Thank you! Your enquiry has been received. We will get back to you within 1–2 business days.
+            </div>
+
+          </form>
+        </div>
+        <!-- End Form -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMISSION PROCESS -->
+  <section style="background: var(--white);">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">Admission Process</h2>
+        <p class="section-subtitle">Joining Asaba School is simple. Here's how to get started.</p>
+      </div>
+      <div class="features-grid" style="margin-top: 48px;">
+        <div class="feature-card fade-in" style="text-align: center; border-top-color: var(--gold);">
+          <span class="feature-icon">1️⃣</span>
+          <h3>Submit Enquiry</h3>
+          <p>Fill in the form on this page or call us directly. Tell us about your child and the class you're interested in.</p>
+        </div>
+        <div class="feature-card fade-in" style="text-align: center; border-top-color: var(--green-mid);">
+          <span class="feature-icon">2️⃣</span>
+          <h3>Visit the School</h3>
+          <p>Come and see the school in person. Meet our teachers, tour the classrooms, and get answers to your questions.</p>
+        </div>
+        <div class="feature-card fade-in" style="text-align: center; border-top-color: #e67e22;">
+          <span class="feature-icon">3️⃣</span>
+          <h3>Complete Registration</h3>
+          <p>Fill in the official registration form at the school office and submit the required documents.</p>
+        </div>
+        <div class="feature-card fade-in" style="text-align: center; border-top-color: #8b5e3c;">
+          <span class="feature-icon">4️⃣</span>
+          <h3>Pay &amp; Begin</h3>
+          <p>Pay the admission and term fees, collect uniform and stationery requirements, and your child is ready to start!</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 48px; background: #f0f7f3; border-radius: var(--radius); padding: 28px; border-left: 5px solid var(--green-mid);">
+        <h3 style="margin-bottom: 12px; color: var(--green-dark);">📋 Documents Required for Admission</h3>
+        <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px;">
+          <li style="display:flex; gap:8px; align-items:flex-start;">✅ <span>Passport-size photograph of child (2 copies)</span></li>
+          <li style="display:flex; gap:8px; align-items:flex-start;">✅ <span>Birth certificate or baptism card</span></li>
+          <li style="display:flex; gap:8px; align-items:flex-start;">✅ <span>Previous school report card (if applicable)</span></li>
+          <li style="display:flex; gap:8px; align-items:flex-start;">✅ <span>Immunisation / health card</span></li>
+          <li style="display:flex; gap:8px; align-items:flex-start;">✅ <span>Parent/guardian National ID copy</span></li>
+          <li style="display:flex; gap:8px; align-items:flex-start;">✅ <span>Completed registration form</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <p class="school-name">Asaba School Masindi</p>
+          <p>Providing quality nursery and primary education in Masindi, Uganda since 1990. Building confident young learners for a brighter future.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">📘</a>
+            <a href="https://www.tiktok.com/@asabaschoolmasindi" class="social-link" aria-label="TikTok" target="_blank" rel="noopener">🎵</a>
+            <a href="#" class="social-link" aria-label="WhatsApp">💬</a>
+            <a href="#" class="social-link" aria-label="YouTube">▶️</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact / Admissions</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="academics.html#nursery">Nursery Section</a></li>
+            <li><a href="academics.html#primary">Primary Section</a></li>
+            <li><a href="academics.html#ple">PLE Preparation</a></li>
+            <li><a href="academics.html#clubs">Clubs &amp; Activities</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <ul class="footer-contact">
+            <li><span>📍</span><span>Ashton Drive, P.O. Box 438, Masindi</span></li>
+            <li><span>📞</span><span><a href="tel:+256780891941">+256 780 891 941</a></span></li>
+            <li><span>✉</span><span><a href="mailto:info@asabaschool.ac.ug">info@asabaschool.ac.ug</a></span></li>
+            <li><span>🕗</span><span>Mon–Fri: 7:30am – 5:00pm</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="currentYear"></span> Asaba School Masindi. All rights reserved.</span>
+        <span>Designed for BSE1208 — Introduction to Web Development</span>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollTop" aria-label="Scroll to top">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>
