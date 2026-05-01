@@ -34,7 +34,7 @@ The website simulates a professional online presence for the school, showcasing 
 
 ## 🌐 Live Website
 
-🔗 **[https://yourusername.github.io/asaba-school](https://yourusername.github.io/asaba-school)**
+🔗 **[https://battejeanpaulreuben-coder.github.io/asaba-school](https://battejeanpaulreuben-coder.github.io/asaba-school)**
 
 > ⚠️ Replace `yourusername` with your actual GitHub username after deployment.
 
